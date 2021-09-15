@@ -15,6 +15,7 @@
    <link href="CSS/titleSection.css" rel="stylesheet">
    <link href="CSS/contentSection.css" rel="stylesheet">
    <link href="CSS/form.css" rel="stylesheet">
+   <link href="CSS/list.css" rel="stylesheet">
    <script defer src="JS/script.js"></script>
 </head>
 
@@ -27,8 +28,8 @@
          <h2 class="titleSection__subHeader">Dodaj nowe zadanie</h2>
       </section>
       <section class="contentSection">
-         <form class="form">
-            <input class="form__input" placeholder="Co jest do zrobienia?">
+         <form class="form js-form">
+            <input class="form__input js-newTask" placeholder="Co jest do zrobienia?">
             <input class="form__button" type="submit" value="Dodaj zadanie">
          </form>
       </section>
@@ -36,6 +37,7 @@
          <h2 class="titleSection__subHeader">Lista zadań</h2>
       </section>
       <section class="contentSection">
+         <ul class="list js-taskList"></ul>
       </section>
    </main>
 </body>
