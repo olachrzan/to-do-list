@@ -4,12 +4,23 @@
          content: "Zrobić zakupy",
          done: true,
       },
-
       {
          content: "Ugotować obiad",
          done: false,
       },
    ];
+
+   const addNewTask = (newTaskContent) => {
+      tasks.push({
+         content: newTaskContent,
+      });
+      render();
+   };
+
+   const removeTask = (index) => {
+      tasks.splice(index, 1);
+      render();
+   };
 
    const render = () => {
       let htmlString = "";
@@ -17,19 +28,20 @@
       for (const task of tasks) {
          htmlString += `
          <li class="list__item ${task.done ? "list__item--done" : ""}">
-            ${task.content}
+         ${task.content}
+         <button class="button button--remove js-remove">usuń</button>
          </li>
          `;
       }
-
       document.querySelector(".js-taskList").innerHTML = htmlString;
-   };
 
-   const addNewTask = (newTaskContent) => {
-      tasks.push({
-         content: newTaskContent,
+      const removeButtons = document.querySelectorAll(".js-remove");
+
+      removeButtons.forEach((removeButton, index) => {
+         removeButton.addEventListener("click", () => {
+            removeTask(index);
+         });
       });
-      render();
    };
 
    const onFormSubmit = (event) => {
