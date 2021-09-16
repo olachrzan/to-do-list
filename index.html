@@ -10,10 +10,9 @@
       crossorigin="anonymous" referrerpolicy="no-referrer" />
    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
    <link href="CSS/style.css" rel="stylesheet">
-   <link href="CSS/main.css" rel="stylesheet">
    <link href="CSS/headerSection.css" rel="stylesheet">
-   <link href="CSS/titleSection.css" rel="stylesheet">
-   <link href="CSS/contentSection.css" rel="stylesheet">
+   <link href="CSS/main.css" rel="stylesheet">
+   <link href="CSS/section.css" rel="stylesheet">
    <link href="CSS/form.css" rel="stylesheet">
    <link href="CSS/list.css" rel="stylesheet">
    <script defer src="JS/script.js"></script>
@@ -24,19 +23,15 @@
       <h1>Lista zadań</h1>
    </header>
    <main class="main">
-      <section class="titleSection">
-         <h2 class="titleSection__subHeader">Dodaj nowe zadanie</h2>
-      </section>
-      <section class="contentSection">
+      <section class="section">
+         <h2 class="section__subHeader">Dodaj nowe zadanie</h2>
          <form class="form js-form">
             <input class="form__input js-newTask" placeholder="Co jest do zrobienia?">
             <input class="form__button" type="submit" value="Dodaj zadanie">
          </form>
       </section>
-      <section class="titleSection">
-         <h2 class="titleSection__subHeader">Lista zadań</h2>
-      </section>
-      <section class="contentSection">
+      <section class="section">
+         <h2 class="section__subHeader">Lista zadań</h2>
          <ul class="list js-taskList"></ul>
       </section>
    </main>

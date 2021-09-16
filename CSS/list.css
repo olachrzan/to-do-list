@@ -1,5 +1,6 @@
 .list {
-   padding: 0;
+   padding: 20px;
+   margin: 0;
 }
 
 .list__item {
@@ -10,12 +11,12 @@
    align-items: center;
 }
 
-.list__paragraph {
-   margin: 0 10px;
+.list__span {
+   margin: 0 15px;
    flex-grow: 1;
 }
 
-.list__paragraph--done {
+.list__span--done {
    text-decoration: line-through;
 }
 

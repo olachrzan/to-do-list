@@ -1,0 +1,12 @@
+.section {
+   background-color: #fff;
+   padding: 0;
+   margin-bottom: 10px;
+}
+
+.section__subHeader {
+   margin: 0;
+   font-size: 20px;
+   border-bottom: 2px solid #eee;
+   padding: 20px;
+}
