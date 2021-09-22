@@ -11,6 +11,10 @@
    align-items: center;
 }
 
+.list__item--hidden {
+   display: none;
+}
+
 .list__span {
    margin: 0 15px;
    flex-grow: 1;

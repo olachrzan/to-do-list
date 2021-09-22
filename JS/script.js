@@ -1,11 +1,12 @@
 {
    let tasks = [];
+   let hideDoneTasks = false;
 
    const addNewTask = (newTaskContent) => {
       tasks = [
          ...tasks,
          { content: newTaskContent, }
-      ]
+      ];
       render();
    };
 
@@ -26,7 +27,20 @@
       render();
    };
 
-   const bindEvents = () => {
+   const markAllTasksDone = () => {
+      tasks = tasks.map(task => ({
+         ...task,
+         done: true,
+      }));
+      render();
+   };
+
+   const toggleHideDoneTasks = () => {
+      hideDoneTasks = !hideDoneTasks;
+      render();
+   };
+
+   const bindTasksEvents = () => {
       const removeButtons = document.querySelectorAll(".js-remove");
 
       removeButtons.forEach((removeButton, index) => {
@@ -44,12 +58,9 @@
       });
    };
 
-   const render = () => {
-      let htmlString = "";
-
-      for (const task of tasks) {
-         htmlString += `
-         <li class="list__item">
+   const renderTasks = () => {
+      const taskToHTML = task => `
+         <li class="list__item ${task.done && hideDoneTasks ? "list__item--hidden" : ""}">
             <button class="list__button js-done">
                ${task.done ? "&#10004;" : ""}
             </button>
@@ -61,10 +72,47 @@
             </button>
          </li>
          `;
-      }
-      document.querySelector(".js-taskList").innerHTML = htmlString;
+      const tasksElement = document.querySelector(".js-taskList");
+      tasksElement.innerHTML = tasks.map(taskToHTML).join("");
+   };
 
-      bindEvents();
+   const renderButtons = () => {
+      const buttonsElement = document.querySelector(".js-buttons");
+
+      if (tasks.length === 0) {
+         buttonsElement.innerHTML = "";
+         return;
+      }
+
+      buttonsElement.innerHTML = `
+         <button class="buttons__button js-toggleHideDoneTasks">
+            ${hideDoneTasks ? "Pokaż" : "Ukryj"} ukończone
+         </button>
+         <button class="buttons__button js-markAllDone" ${tasks.every(({ done }) => done) ? "disabled" : ""}>
+            Ukończ wszystkie
+         </button>
+      `;
+   };
+
+   const bindButtonsEvents = () => {
+      const markAllTasksDoneButton = document.querySelector(".js-markAllDone");
+      
+      if (markAllTasksDoneButton) {
+         markAllTasksDoneButton.addEventListener("click", markAllTasksDone);
+      }
+
+      const toggleHideDoneTasksButton = document.querySelector(".js-toggleHideDoneTasks");
+      
+      if (toggleHideDoneTasksButton) {
+         toggleHideDoneTasksButton.addEventListener("click", toggleHideDoneTasks);
+      }
+   };
+
+   const render = () => {
+      renderTasks();
+      bindTasksEvents();
+      renderButtons();
+      bindButtonsEvents();
    };
 
    const clearInput = (newTaskElement) => {
