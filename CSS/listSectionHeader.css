@@ -1,0 +1,28 @@
+.listSectionHeader {
+   border-bottom: 2px solid #eee;
+   padding: 20px;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   align-items: center;
+
+}
+
+@media (max-width: 768px) {
+   .listSectionHeader {
+      flex-direction: column;
+   }
+}
+
+.listSectionHeader__subHeader {
+   font-size: 20px;
+   margin: 0;
+
+}
+
+@media (max-width: 768px) {
+   .listSectionHeader__subHeader {
+      margin: 0 0 20px 0;
+      align-self: flex-start;
+   }
+}

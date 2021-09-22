@@ -1,0 +1,38 @@
+.textButtons {
+   display: flex;
+}
+
+@media (max-width: 768px) {
+   .textButtons {
+      flex-direction: column;
+   }
+}
+
+.textButtons__button {
+   margin-left: 30px;
+   padding: 0;
+   border: none;
+   background-color: transparent;
+   color: hsl(180, 100%, 25%);
+}
+
+.textButtons__button:hover {
+   color: hsl(180, 100%, 32%);
+}
+
+.textButtons__button:active {
+   color: hsl(180, 100%, 34%);
+}
+
+.textButtons__button:disabled {
+   color: #aaa;
+}
+
+@media (max-width: 768px) {
+   .textButtons__button {
+      margin: 0 0 20px 0;
+   }
+   .textButtons__button--last {
+      margin: 0;
+   }
+}
