@@ -27,23 +27,24 @@
 .list__button {
    height: 25px;
    width: 25px;
-   background-color: green;
+   background-color: hsl(120, 100%, 25%);
    color: #fff;
    border: none;
    font-size: 14px;
    flex-shrink: 0;
+   transition: background-color 0.4s;
 }
 
 .list__button:hover {
-   background-color: hsl(120, 100%, 28%);
-}
-
-.list__button:active {
    background-color: hsl(120, 100%, 30%);
 }
 
+.list__button:active {
+   background-color: hsl(120, 100%, 34%);
+}
+
 .list__button--remove {
-   background-color: crimson;
+   background-color: hsl(348, 83%, 47%);
 }
 
 .list__button--remove:hover {

@@ -30,6 +30,7 @@
    background-color: teal;
    color: #fff;
    border: none;
+   transition: background-color 0.4s, transform 0.4s;
 }
 
 @media (max-width: 768px) {
@@ -40,6 +41,7 @@
 
 .form__button:hover {
    background-color: hsl(180, 100%, 28%);
+   transform: scale(1.04);
    
 }
 .form__button:active {

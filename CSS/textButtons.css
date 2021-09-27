@@ -14,6 +14,7 @@
    border: none;
    background-color: transparent;
    color: hsl(180, 100%, 25%);
+   transition: color 0.4s;
 }
 
 .textButtons__button:hover {
