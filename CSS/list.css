@@ -37,6 +37,7 @@
 
 .list__button:hover {
    background-color: hsl(120, 100%, 30%);
+   cursor: pointer;
 }
 
 .list__button:active {

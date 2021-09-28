@@ -19,6 +19,7 @@
 
 .textButtons__button:hover {
    color: hsl(180, 100%, 32%);
+   cursor: pointer;
 }
 
 .textButtons__button:active {
