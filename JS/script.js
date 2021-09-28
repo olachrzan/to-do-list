@@ -41,18 +41,18 @@
    };
 
    const bindTasksEvents = () => {
-      const removeButtons = document.querySelectorAll(".js-remove");
+      const removeTaskButtons = document.querySelectorAll(".js-remove");
 
-      removeButtons.forEach((removeButton, index) => {
-         removeButton.addEventListener("click", () => {
+      removeTaskButtons.forEach((removeTaskButton, index) => {
+         removeTaskButton.addEventListener("click", () => {
             removeTask(index);
          });
       });
 
-      const toggleDoneButtons = document.querySelectorAll(".js-done");
+      const toggleTaskDoneButtons = document.querySelectorAll(".js-done");
 
-      toggleDoneButtons.forEach((toggleDoneButton, index) => {
-         toggleDoneButton.addEventListener("click", () => {
+      toggleTaskDoneButtons.forEach((toggleTaskDoneButton, index) => {
+         toggleTaskDoneButton.addEventListener("click", () => {
             toggleTaskDone(index);
          });
       });
@@ -77,14 +77,14 @@
    };
 
    const renderButtons = () => {
-      const buttonsElement = document.querySelector(".js-textButtons");
+      const buttonsContainer = document.querySelector(".js-textButtons");
 
       if (tasks.length === 0) {
-         buttonsElement.innerHTML = "";
+         buttonsContainer.innerHTML = "";
          return;
       }
 
-      buttonsElement.innerHTML = `
+      buttonsContainer.innerHTML = `
          <button class="textButtons__button js-toggleHideDoneTasks">
             ${hideDoneTasks ? "Pokaż" : "Ukryj"} ukończone
          </button>
